@@ -37,6 +37,11 @@ func setTime(host string) (time.Time, error) {
 		return emptyTime, err
 	}
 
+	err = r.Validate()
+	if err != nil {
+		return emptyTime, err
+	}
+
 	t := time.Now().Add(r.ClockOffset)
 	err = setPlatformTime(t)
 	if err != nil {
