@@ -1,4 +1,4 @@
-// +build linux,cgo
+//go:build (linux || darwin) && cgo
 
 package main
 
