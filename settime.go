@@ -28,7 +28,8 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("Time sucessfully updated to %v\n", tm)
+	const format = "Mon Jan _2 2006 15:04:05 (MST)"
+	fmt.Printf("Time sucessfully set to: %s\n", tm.Format(format))
 }
 
 func setTime(host string) (time.Time, error) {
